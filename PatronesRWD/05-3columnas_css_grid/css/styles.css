@@ -1,0 +1,78 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+p {
+    font-size: 2rem;
+}
+
+.entrada-blog a {
+    display: inline-block;
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+/** CODIGO AQUI **/
+
+/* Tres columnas diferentes tamaños con GRID(2 iguales, 1 más pequeña)*/
+
+/* MQ para que los usuarios de dispositivos como tables o pc puedan ver la pantalla conforme
+la mq lo indique*/
+@media (min-width: 768px) {
+    .contenedor-grid{
+        display: grid; /* Para activar las funciones correspondientes a grid*/
+        grid-template-areas: "izquierda contenido derecha"; /* Aquí defino que mi contenedor-grid tiene 3 areas (1 article y 2 asides)*/
+        grid-template-columns: 1fr 3fr 1fr; /* Aquí le asigno tamaño a las áreas que definí anteriormente. 
+        (1 + 3 + 1 = 5 partes) y de ahí se le asigna la parte correspondiente, ejemplo contenido = 3/5 partes*/
+        gap: 2rem; /* Uso gap para hacer una separación de 20 px*/
+
+    }
+    .contenido-principal {
+        grid-area: contenido; /* Aquí le digo que para mi contenido-principal, tome el area 
+        llamada contenido, del tal manera que toma esa area que tiene 3/5 partes*/
+    }
+
+    sidebar-1{
+        grid-area: izquierda; /* Aquí mando el sobre nosotros a la izquierda.*/
+    }
+
+    /* Por qué no hice código sobre el sidebar-2? Porque por defecto toma el area derecha
+    ya que es la única que no está ocupada*/
+
+}

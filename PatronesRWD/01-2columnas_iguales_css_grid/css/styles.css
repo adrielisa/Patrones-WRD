@@ -1,0 +1,53 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.entrada-blog a {
+    display: inline-block;
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/** CODIGO AQUI **/
+
+@media (min-width: 768px) {
+    .dos-columnas{
+        display: grid;
+        grid-template-columns: 50% 50%; /* Esto crea 2 columnas, ambas midiendo 50% del contenedor*/
+        grid-template-columns: repeat(2, 50% ); /* funciona igual que el código de arriba, el código dice que haga 2 columnas de porcentaje 50% cada una*/
+        grid-template-columns: 1fr 1fr; /* Divide el código en fracciones*/
+        grid-template-columns: repeat(2, 1fr);  /* Dice que hay 2 columnas de 1 fracción*/
+
+        column-gap: 2rem; /* Para darle una separación a las columnas*/
+    }
+}
